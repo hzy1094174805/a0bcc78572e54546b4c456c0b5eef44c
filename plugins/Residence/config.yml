@@ -10,7 +10,7 @@ Global:
   versionCheck: true
   # This loads the <language>.yml file in the Residence Language folder
   # All Residence text comes from this file. (NOT DONE YET)
-  Language: English
+  Language: Chinese
   # Wooden Hoe is the default selection tool for Residence.
   # You can change it to another item ID listed here: http://www.minecraftwiki.net/wiki/Data_values
   SelectionToolId: WOODEN_HOE
@@ -183,6 +183,12 @@ Global:
         CenterX: 0
         CenterZ: 0
       world:
+        Enabled: true
+        MaxCoord: 1000
+        MinCoord: 500
+        CenterX: 0
+        CenterZ: 0
+      example_world:
         Enabled: true
         MaxCoord: 1000
         MinCoord: 500

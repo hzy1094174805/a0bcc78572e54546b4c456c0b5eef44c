@@ -33,8 +33,8 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: 0.0
-      y: 67.0
+      x: -544.0
+      y: 65.0
       z: 0.0
       pitch: 0.0
       yaw: 0.0
@@ -42,7 +42,7 @@ worlds:
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '75325489574032352'
+    seed: '7074299914659326426'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -81,7 +81,7 @@ worlds:
     spawnLocation:
       ==: MVSpawnLocation
       x: 0.0
-      y: 65.0
+      y: 62.0
       z: 0.0
       pitch: 0.0
       yaw: 0.0
@@ -89,7 +89,7 @@ worlds:
     bedRespawn: 'true'
     worldBlacklist: []
     environment: THE_END
-    seed: '75325489574032352'
+    seed: '7239294835815086851'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -127,16 +127,63 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: -0.5
+      x: 3.5
       y: 66.0
-      z: 1.5
+      z: 3.5
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NETHER
-    seed: '75325489574032352'
+    seed: '7239294835815086851'
     generator: 'null'
+    playerLimit: '-1'
+    allowFlight: 'true'
+  example_world:
+    ==: MVWorld
+    hidden: 'false'
+    alias: ''
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '1.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: EASY
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'true'
+    portalForm: ALL
+    gameMode: SURVIVAL
+    keepSpawnInMemory: 'true'
+    spawnLocation:
+      ==: MVSpawnLocation
+      x: 0.0
+      y: 91.0
+      z: 112.0
+      pitch: 0.0
+      yaw: 0.0
+    autoLoad: 'true'
+    bedRespawn: 'true'
+    worldBlacklist: []
+    environment: NORMAL
+    seed: '8805163958360217762'
+    generator: Terra:OVERWORLD
     playerLimit: '-1'
     allowFlight: 'true'

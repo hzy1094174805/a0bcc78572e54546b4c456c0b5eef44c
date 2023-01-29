@@ -31,6 +31,8 @@ Language:
     NameCharacters: '&c名字中包含无效字符...'
     FromConsole: '&c你只能在控制台中使用!'
     Ingame: '&c你只能在游戏中使用!'
+    PortalDestination: '&cPortal destination is in restricted zone. Portal creation
+      canceled. &7Find new location'
   Area:
     Exists: '&c区域名已存在.'
     Create: '&e领地区域创建成功, ID &6%1'
@@ -56,6 +58,9 @@ Language:
     SizeLimit: '&e区域大小超出了允许的尺寸上限.'
     HighLimit: '&c你不能保护这么高的领地, 高度上限为 &6%1'
     LowLimit: '&c你不能保护这么深的领地, 深度上限为 &6%1'
+    TooClose: '&cToo close to another residence. You need atleast &e%1 &cblock gap.'
+    WeirdShape: '&3Residence is out of regular shape. &6%1 &3side is &6%2 &3times
+      bigger than &6%3 &3side'
   Select:
     Points: '&e执行命令前需要先选中两个选取点!'
     Overlap: '&c选取点与区域 &6%1 &c重叠!'
@@ -181,6 +186,9 @@ Language:
     ChangedFor: '&e改变了 &6%1 &e权限来自 &6%2 &e检查的领地'
     reset: '&e重置权限，用于 &6%1 &e领地'
     resetAll: '&e重置权限，用于 &6%1 &e领地'
+    lackColor: '&7'
+    lackPrefix: ''
+    others: '&eand &2%1 &eothers'
   Bank:
     NoAccess: '&c你没有权限使用银行.'
     Name: ' &e银行: &6%1'
@@ -188,6 +196,7 @@ Language:
     Deposit: '&e你向领地银行存款 &6%1 &e元.'
     Withdraw: '&e你从领地银行中取出 &6%1 &e元.'
     rentedWithdraw: '&c不能从租用的领地银行提款.'
+    full: '&eResidence bank is full!'
   Subzone:
     Rename: '&e领地子区域 &6%1 &e已被重命名为 &6%2'
     Remove: '&e已删除领地子区域 &6%1&e.'
@@ -272,6 +281,7 @@ Language:
     IsForRent: '&6(出租)'
     IsForSale: '&6(出售)'
     IsRented: '&6(已出租)'
+    GiveConfirm: '&7Click to confirm &6%1 &7residence transfer from &6%2 &7to &6%3'
   Rent:
     Disabled: '&c领地出租已禁用.'
     DisableRenew: '&e领地 &6%1 &e不会在租约到期时自动续期.'
@@ -298,6 +308,9 @@ Language:
     removedBlock: '&e删除了一个禁用的命令给 &6%1 &e领地'
     Blocked: '&e禁用的命令: &6%1'
     Allowed: '&e允许的命令: &6%1'
+    Parsed: '%1'
+    PlacehlderList: '&e%1. &6%2'
+    PlacehlderResult: ' &eresult: &6%1'
   Rentable:
     Land: '&e出租领地: &6'
     AllowRenewing: '&e可以续费: &6%1'
@@ -443,7 +456,6 @@ Language:
     TpLimit: '&e请等待 &6%1 &e秒后再传送'
     TeleportSuccess: '&e传送到 X:&6%1&e, Y:&6%2&e, Z:&6%3 &e位置'
     IncorrectLocation: '&6无法找到正确的传送位置, 请等待 &e%1 &6秒后重试.'
-    WorldList: '&e可用世界: &6%1'
     Disabled: '&c在这个世界上，随机传送功能被禁用'
     TeleportStarted: '&e传送即将开始, 在 &6%4 &e秒内不要移动.'
     WorldList: '&e可用世界: &6%1'
@@ -478,12 +490,9 @@ Language:
     InvalidHelp: '&c无效帮助页码.'
     TeleportDeny: '&c你没有传送的权限.'
     TeleportSuccess: '&e已传送!'
-    TeleportConfirmLava: '&c这个传送并不安全，你会掉进 &6岩浆&c.
-      使用 &6/res tpconfirm &c强制传送.'
-    TeleportConfirmVoid: '&c这个传送不安全，你会掉进 &6虚空&c.
-      使用 &6/res tpconfirm &c强制传送.'
-    TeleportConfirm: '&c这个传送并不安全，你将摔落 &6%1 &c个方块.
-      使用 &6/res tpconfirm &c强制传送.'
+    TeleportConfirmLava: '&c这个传送并不安全，你会掉进 &6岩浆&c. 使用 &6/res tpconfirm &c强制传送.'
+    TeleportConfirmVoid: '&c这个传送不安全，你会掉进 &6虚空&c. 使用 &6/res tpconfirm &c强制传送.'
+    TeleportConfirm: '&c这个传送并不安全，你将摔落 &6%1 &c个方块. 使用 &6/res tpconfirm &c强制传送.'
     TeleportStarted: '&e传送即将开始, 在 &6%2 &e秒内不要移动.'
     TeleportTitle: '&e传送中..'
     TeleportTitleTime: '&6%1'
@@ -786,13 +795,11 @@ CommandHelp:
               Description: 租用领地
               Info:
               - '&e使用方法: &6/res market rent [领地名称] <自动续租>'
-              - 租用一个领地. <自动续租> 可以是 true 或 false.  如果是 true,
-                并且领地所有者允许, 领地将会在租约到期之前自动续租.
+              - 租用一个领地. <自动续租> 可以是 true 或 false.  如果是 true, 并且领地所有者允许, 领地将会在租约到期之前自动续租.
             rentable:
               Description: 将领地设置为可出租
               Info:
-              - '&e使用方法: &6/res market rentable [领地名称] [价格] [天数] <允许续租>
-                <留在市场> <允许自动付款>'
+              - '&e使用方法: &6/res market rentable [领地名称] [价格] [天数] <允许续租> <留在市场> <允许自动付款>'
               - 以 [价格] 出租领地 [天数]
               - 如果 <允许续租> 等于 "teue" 在租金到期之前，领地能够再次被租用
               - 如果 <留在市场> 等于 "teue" 在玩家退租后，领地将继续留在市场上出租
@@ -955,8 +962,7 @@ CommandHelp:
               Description: 设置领地商店描述
               Info:
               - '&e使用方法: &6/res shop setdesc [描述文字]'
-              - 设置领地商店描述, 支持颜色代码
-                使用 /n 可以换行
+              - 设置领地商店描述, 支持颜色代码 使用 /n 可以换行
             createboard:
               Description: 创建商店宣传板
               Info:
@@ -1573,6 +1579,17 @@ CommandHelp:
               Description: 设置移动速度为1.0
               Info:
               - '&e使用方法: &6/res set <领地名称> wspeed2 true/false/remove=移除'
+            backup:
+              Translated: backup
+              Description: If set to true, restores previous look of area (WordEdit
+                required)
+              Info:
+              - '&eUsage: &6/res set <residence> backup true/false/remove'
+            harvest:
+              Translated: harvest
+              Description: Allows harvesting
+              Info:
+              - '&eUsage: &6/res set/pset <residence> harvest true/false/remove'
         remove:
           Info:
           - '&e使用方法: &6/res remove [领地名称]'
@@ -1751,3 +1768,8 @@ CommandHelp:
           - '&e使用方法: &6/resload'
           - 该命令不安全! 它不会先保存领地状态
           - 对领地做出改变后重新加载存档
+        placeholders:
+          Info:
+          - '&eUsage: &6/res placeholders (parse) (placeholder) (playerName)'
+          Description: List of placeholders
+          parse: '[result]'

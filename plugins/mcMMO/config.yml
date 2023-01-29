@@ -48,7 +48,7 @@ General:
     # This change is purely cosmetic, it retains the old feel of mcMMO where you could level up thousands of times
     RetroMode:
         Enabled: true
-    Locale: en_US
+    Locale: zh_CN
     MOTD_Enabled: true
     EventBroadcasts: true
     EventInfoOnPlayerJoin: true
