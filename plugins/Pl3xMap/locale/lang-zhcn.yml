@@ -6,10 +6,9 @@ command:
     click-to-confirm: 点击确认参数
   argument:
     help-query: 帮助-查询
-    optional-player: 如果没有指定，则默认为正在执行的播放器（控制台必须
-      指定一个玩家）。
+    optional-player: 如果没有指定，则默认为正在执行的播放器（控制台必须 指定一个玩家）。
     optional-world: 如果没有提供，则默认为玩家的当前世界。
-    optional-center: 如果未指定，则默认为 (<white>0<gray>,</gray> 0</white>) 
+    optional-center: 如果未指定，则默认为 (<white>0<gray>,</gray> 0</white>)
   addon:
     description: 管理Pl3xMap附加组件
   cancelrender:
@@ -26,16 +25,13 @@ command:
     starting: <green>开始全面渲染 <grey><world>
     finished: <green>完成了 <grey><world></grey> 的全部渲染，在 <grey><elapsed>中
     cancelled: <red>取消了 <grey><world>的全面渲染
-    resumed-rendering: <yellow>之前未完成的 <grey><world></grey>
-      的全面渲染
+    resumed-rendering: <yellow>之前未完成的 <grey><world></grey> 的全面渲染
     obtaining-regions: <yellow>从文件中获取区域......（这可能需要一些时间）。
     found-total-regions: <green>找到 <grey><total></grey> 区域文件
-    resumed-total-regions: <green>恢复扫描 <grey><done></grey>/<grey><total></grey>
-      区域。
+    resumed-total-regions: <green>恢复扫描 <grey><done></grey>/<grey><total></grey> 区域。
       地区 (<gold><percent>%</gold>)
     use-status-for-progress: <gold>使用 <grey>/map status</grey> 命令来查看进度。
-    error-parsing-region-file: 解析区域文件<grey><path>的坐标时失败。
-      (<filename>)
+    error-parsing-region-file: 解析区域文件<grey><path>的坐标时失败。 (<filename>)
   help:
     description: 获取Pl3xmap命令的帮助
   hide:
@@ -55,8 +51,7 @@ command:
     obtaining-regions: <yellow>获取半径内的块状物......（这可能需要一些时间）。
     found-total-regions: <green>在半径范围内发现 <grey><total></grey> 大块
     use-status-for-progress: <gold>使用 <grey>/map status</grey> 命令来查看进度。
-    error-parsing-region-file: 解析区域文件 '<path>'的坐标失败。
-      (<filename>)
+    error-parsing-region-file: 解析区域文件 '<path>'的坐标失败。 (<filename>)
   reload:
     description: 重新加载插件
     success: <green>Pl3xMap <grey>v<version></grey>重新加载
@@ -111,8 +106,7 @@ error:
   must-specify-world: <red>你必须指定世界
   no-such-world: <red>没有这样一个世界 <grey><world>
   must-specify-center: <red>你必须指定中心点
-  point-invalid-format: '''<point>'' 不是一个有效的位置。要求的格式是 ''<x>
-    <z>'''
+  point-invalid-format: '''<point>'' 不是一个有效的位置。要求的格式是 ''<x> <z>'''
   world-disabled: <red>Pl3xMap在世界范围内被禁用 <grey><world>
   render-stalled: <red>渲染已经停滞! 取消了。
 ui:
