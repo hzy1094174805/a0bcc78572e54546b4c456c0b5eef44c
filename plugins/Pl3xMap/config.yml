@@ -1,0 +1,128 @@
+settings:
+  # Extra logger output.
+  # (can be spammy)
+  debug-mode: false
+  # The language file to use from the locale folder.
+  language-file: lang-en.yml
+  web-directory:
+    # The directory that houses the website and world tiles.
+    # This is a relative path from Pl3xMap's plugin directory,
+    # unless it starts with / in which case it will be treated
+    # as an absolute path.
+    path: web
+    # Set to true if you don't want Pl3xMap to overwrite
+    # the website files on startup. (Good for servers that
+    # customize these files)
+    read-only: false
+    # The image format for tile images.
+    # Built in types: png
+    tile-format: png
+  internal-webserver:
+    # Enable the built-in web server.
+    # Disable this if you want to use a standalone web server such as apache or nginx.
+    enabled: true
+    # The interface IP the built-in web server should bind to.
+    # This is NOT always the same as your public facing IP.
+    # If you don't understand what this is, leave it set to 0.0.0.0
+    bind: 0.0.0.0
+    # The port the built-in web server listens to.
+    # Make sure the port is allocated if using Pterodactyl.
+    port: 8080
+world-settings:
+  default:
+    # Enables this world to be rendered on the map.
+    enabled: false
+    render:
+      # Renderers to use. Each renderer will render a different
+      # type of map. The built in renderers include: basic, biomes
+      renderers:
+        basic: overworld_basic
+        biomes: overworld_biomes
+      # The number of threads to use for loading and scanning chunks.
+      # Value of -1 will use 50% of the available cores. (recommended)
+      render-threads: -1
+      # Enables blending of biome grass/foliage/water colors similar to
+      # the client's biome blending option.
+      # Note: This may slow down your renders quite drastically if enabled.
+      # Values are in range 0-7
+      biome-blend: 2
+      # Skylight value for world.
+      # Values are 0-15 with 0 being darkest and 15 being full bright.
+      skylight: 5
+      # Enable translucent fluids.
+      # This will make the fluids look fancier and translucent
+      # so you can see the blocks below in shallow fluids.
+      translucent-fluids: true
+      # Enable translucent glass.
+      # This will make the glass look fancier and translucent
+      # so you can see the blocks below.
+      translucent-glass: true
+      # Type of heightmap to render.
+      # MODERN is a clearer, more detailed view.
+      # OLD_SCHOOL is the old type from v1.
+      # EVEN_ODD makes every other Y layer darker, like Dynmap.
+      heightmap-type: MODERN
+      background:
+        # How often (in seconds) to check the queue for any chunks needing
+        # updates. This is what updates your map as changes happen in the
+        # world. Setting this too low may cause the background renderer to
+        # run non-stop. Setting this too high may cause a delay in seeing
+        # updates on your map. Use 0 value to disable this feature.
+        interval: 5
+        # The maximum amount of regions to render from the queue at
+        # a time. Setting this too low may cause the queue to become
+        # quite large and delay updates from showing on the map.
+        # Setting this too high may cause the background renderer to
+        # run non-stop.
+        max-chunks-per-interval: 5
+    ui:
+      # The display name of the world in the world list.
+      # Use <world> to use the official world name.
+      display-name: <world>
+      # The order of the world in the world list
+      order: 0
+      # Shows the footer attributes
+      attribution: true
+      # The display position for the blockinfo box
+      blockinfo: bottomleft
+      # The display position for the coordinates box
+      coords: bottomcenter
+      # The display position for the link box
+      link: bottomright
+    zoom:
+      # The default zoom when loading the map in browser.
+      # Normal sized tiles (1 pixel = 1 block) are
+      # always at zoom level 0.
+      default: 0
+      # The maximum zoom out you can do on the map.
+      # Each additional level requires a new set of tiles
+      # to be rendered, so don't go wild here.
+      max-out: 3
+      # Extra zoom in layers will stretch the original
+      # tile images so you can zoom in further without
+      # the extra cost of rendering more tiles.
+      max-in: 2
+    markers:
+      spawn:
+        # Show the world spawn on the map
+        enabled: true
+      worldborder:
+        # Show the world border on the map
+        enabled: true
+  world:
+    enabled: true
+    ui:
+      display-name: Overworld
+      order: 0
+  world_nether:
+    render:
+      skylight: 10
+    ui:
+      display-name: The Nether
+      order: 1
+  world_the_end:
+    render:
+      skylight: 10
+    ui:
+      display-name: The End
+      order: 2

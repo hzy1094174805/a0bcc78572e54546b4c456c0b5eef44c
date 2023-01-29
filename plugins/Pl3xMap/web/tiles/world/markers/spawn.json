@@ -1,0 +1,23 @@
+[
+  {
+    "type": "icon",
+    "data": {
+      "key": "spawn",
+      "point": {
+        "x": -112,
+        "z": -32
+      },
+      "image": "spawn",
+      "size": {
+        "x": 16.0,
+        "z": 16.0
+      }
+    },
+    "options": {
+      "tooltip": {
+        "content": "Spawn",
+        "direction": 2
+      }
+    }
+  }
+]

@@ -1,0 +1,143 @@
+prefix:
+  command: '<white>[<gradient:#C028FF:#5B00FF>Pl3xMap</gradient>]</white> '
+command:
+  event:
+    click-for-help: Click for help
+    click-to-confirm: Click to confirm
+  argument:
+    help-query: Help Query
+    optional-player: Defaults to the executing player if unspecified (console must
+      specify a player)
+    optional-world: Defaults to the players current world if not provided
+    optional-center: Defaults to (<white>0<gray>,</gray> 0</white>) if unspecified
+  addon:
+    description: Manage Pl3xMap addons
+  cancelrender:
+    description: Cancel active render of a world
+    not-rendering: <grey><world> <red>does not have active render
+    success: <green>Render on <grey><world> </grey>has been cancelled
+  confirm:
+    description: Confirm a pending command
+    not-rendering: <red>Confirmation required. Confirm using <grey>/map confirm
+    success: <red>You don't have any pending confirmations
+  fullrender:
+    description: Fully render a world
+    already-rendering: <grey><world> <red>is already rendering
+    starting: <green>Starting full render of <grey><world>
+    finished: <green>Finished full render on <grey><world></grey> in <grey><elapsed>
+    cancelled: <red>Cancelled full render on <grey><world>
+    resumed-rendering: <yellow>Previously incomplete full render for <grey><world></grey>
+      has resumed where it left off
+    obtaining-regions: <yellow>Obtaining regions from files... (this may take a moment)
+    found-total-regions: <green>Found <grey><total></grey> region files
+    resumed-total-regions: <green>Resumed scanning <grey><done></grey>/<grey><total></grey>
+      regions (<gold><percent>%</gold>)
+    use-status-for-progress: <gold>Use <grey>/map status</grey> command to view progress
+    error-parsing-region-file: Failed to parse coordinates for region file <grey><path>
+      (<filename>)
+  help:
+    description: Get help for Pl3xmap commands
+  hide:
+    description: Hide a player from the map
+    already-hidden: <grey><player> <red>is already hidden from the map
+    success: <grey><player> <green>is now hidden from the map
+  pauserender:
+    description: Pauses all renders for the specified world
+    paused: <green>Paused renders for <grey><world>
+    resumed: <green>Resumed renders for <grey><world>
+  radiusrender:
+    description: Render a section of a world
+    already-rendering: <grey><world> <red>is already rendering
+    starting: <green>Starting radius render of <grey><world>
+    finished: <green>Finished radius render on <grey><world></grey> in <grey><elapsed>
+    cancelled: <red>Cancelled radius render on <grey><world>
+    obtaining-regions: <yellow>Obtaining chunks in radius... (this may take a moment)
+    found-total-regions: <green>Found <grey><total></grey> chunks in radius
+    use-status-for-progress: <gold>Use <grey>/map status</grey> command to view progress
+    error-parsing-region-file: Failed to parse coordinates for region file '<path>'
+      (<filename>)
+  reload:
+    description: Reloads the plugin
+    success: <green>Pl3xMap <grey>v<version></grey> reloaded
+  resetmap:
+    description: Cancel active render of a world
+    active-render: <red>There is an active render for <grey><world>
+    success: <green>Successfully reset map for <grey><world>
+    failed: <red>Could not reset map for <grey><world>
+  show:
+    description: Show a player on the map
+    not-hidden: <grey><player> <red>is not hidden from the map
+    success: <grey><player> <green>is no longer hidden from the map
+  status:
+    description: View a world's render status
+    already-rendering: |-
+      <gold>Map status of <world>
+      Background: <green>Running
+      Active: <red>Not Running
+    render: |-
+      <green>Map status of <gold><world>
+      <white>  Background: <i><background>
+      <white>  Foreground: <i><foreground>
+    render-details: |-
+      <grey>    Chunks: <chunks_done>/<chunks_total> (<gold><percent>%</gold>)
+      <grey>    Remaining: <remaining> (<gold><cps> cps</gold>)
+    render-running: <green>Running
+    render-not-running: <red>Not Running
+    render-paused: <red>Paused
+    player-only-feature: <red>That is a player only feature
+addon:
+  enabling-all: Enabling addons
+  disabling-all: Disabling addons
+  enabling: ' - <name> <version>'
+  disabling: ' - <name> <version>'
+httpd:
+  started:
+    success: <green>Internal webserver running on <yellow><bind></yellow>:<yellow><port></yellow>
+    error: <red>Internal webserver could not start
+  stopped:
+    success: <green>Internal webserver stopped
+    error: <red>An error occurred with the internal webserver
+  disabled: <green>Internal webserver is disabled in <grey>config.yml
+progress:
+  chat: '<world>: <processed_chunks>/<total_chunks> (<percent>%) <gold><cps> cps</gold>
+    eta: <eta>'
+  bossbar: '<gold>Map render of <grey><world></grey>: <red><percent></red>% eta: <eta>'
+  eta:
+    unknown: Unknown
+error:
+  must-specify-player: <red>You must specify the player
+  no-such-player: <red>No such player <grey><player>
+  must-specify-world: <red>You must specify the world
+  no-such-world: <red>No such world <grey><world>
+  must-specify-center: <red>You must specify the center point
+  point-invalid-format: '''<point>'' is not a valid location. Required format is ''<x>
+    <z>'''
+  world-disabled: <red>Pl3xMap is disabled for world <grey><world>
+  render-stalled: <red>Render has stalled! Cancelling.
+ui:
+  layer:
+    players: Players
+    spawn: Spawn
+    worldborder: World Border
+  title: Pl3xMap
+  blockinfo:
+    label: BlockInfo
+    value: <block><br /><biome>
+  coords:
+    label: Coordinates
+    value: <x>, <y>, <z>
+  link:
+    label: Sharable Link
+    value: ''
+  markers:
+    label: Markers
+    value: No markers have been configured
+  players:
+    label: Players (<online>/<max>)
+    value: No players are currently online
+  worlds:
+    label: Worlds
+    value: No worlds have been configured
+  layers:
+    label: Layers
+    value: No layers have been configured

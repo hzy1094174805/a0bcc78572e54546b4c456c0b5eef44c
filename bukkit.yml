@@ -31,5 +31,5 @@ ticks-per:
   autosave: 6000
 aliases: now-in-commands.yml
 worlds:
-  level-name:
+  world:
     generator: Terra:OVERWORLD
