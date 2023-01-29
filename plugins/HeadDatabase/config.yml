@@ -1,6 +1,6 @@
 #You can change your language here.
 #Supported languages can be found in the texts folder.
-locale: "en_US"
+locale: "zh_CN"
 
 # put a cooldown on getting heads
 cooldown-heads: false
