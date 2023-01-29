@@ -184,7 +184,7 @@ log-player-ip-addresses: true
 # Whether to alert the console and operators that a new Geyser version is available that supports a Bedrock version
 # that this Geyser version does not support. It's recommended to keep this option enabled, as many Bedrock platforms
 # auto-update.
-notify-on-new-bedrock-update: true
+notify-on-new-bedrock-update: false
 
 # Which item to use to mark unavailable slots in a Bedrock player inventory. Examples of this are the 2x2 crafting grid while in creative,
 # or custom inventory menus with sizes different from the usual 3x9. A barrier block is the default item.
