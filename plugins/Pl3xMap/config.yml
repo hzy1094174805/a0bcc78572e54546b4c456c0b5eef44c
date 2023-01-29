@@ -3,7 +3,7 @@ settings:
   # (can be spammy)
   debug-mode: false
   # The language file to use from the locale folder.
-  language-file: lang-en.yml
+  language-file: lang-zhcn.yml
   web-directory:
     # The directory that houses the website and world tiles.
     # This is a relative path from Pl3xMap's plugin directory,
